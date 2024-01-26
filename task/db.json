@@ -1,0 +1,75 @@
+{
+  "tasks": [
+    {
+      "id": "e451",
+      "title": "hyunjin",
+      "category": {
+        "id": "1",
+        "name": "Work"
+      },
+      "priority": {
+        "id": "2",
+        "name": "Important"
+      },
+      "date": "2024-01-09T03:00:00.000Z",
+      "completed": true
+    },
+    {
+      "id": "6a17",
+      "title": "minho",
+      "category": {
+        "id": "1",
+        "name": "Work"
+      },
+      "priority": {
+        "id": "1",
+        "name": "Urgent"
+      },
+      "date": "2024-01-10T03:00:00.000Z",
+      "completed": false
+    },
+    {
+      "id": "9340",
+      "title": "lola",
+      "category": {
+        "id": "3",
+        "name": "Personal"
+      },
+      "priority": {
+        "id": "1",
+        "name": "Urgent"
+      },
+      "date": "2023-12-31T03:00:00.000Z",
+      "completed": false
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Work"
+    },
+    {
+      "id": "2",
+      "name": "Study"
+    },
+    {
+      "id": "3",
+      "name": "Personal"
+    }
+  ],
+  "priorities": [
+    {
+      "id": "1",
+      "name": "Urgent"
+    },
+    {
+      "id": "2",
+      "name": "Important"
+    },
+    {
+      "id": "3",
+      "name": "Upcoming"
+    }
+  ],
+  "date": {}
+}
