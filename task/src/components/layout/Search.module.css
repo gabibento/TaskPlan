@@ -1,0 +1,27 @@
+.search_container{
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0.5em 0 0.5em;
+}
+.search_container svg{
+    font-size: 2em;
+    color: #7868D8;
+}
+.search_container svg:hover{
+    opacity: 0.5;
+}
+.search_input input{
+    background-image: url(../../assets//icons8-search.svg);
+    background-repeat: no-repeat;
+    background-position: center left 5px;
+    background-color: #f1f0f0;
+    width: 60vw;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 22px;
+    outline: none;
+}
+.search_input input:hover{
+    background-color: #dddbdb;
+}

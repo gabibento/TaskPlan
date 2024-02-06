@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../layout/Button';
 import TaskCard from '../layout/TaskCard';
-import { AiFillPlusCircle } from "react-icons/ai";
-import { Link } from 'react-router-dom';
+import Filter from '../layout/Filter'
+import Search from '../layout/Search'
+import styles from './Home.module.css'
 
 const Home = () => {
   
   const [tasks, setTasks] = useState([]);
   const [categoryFilter, setCategoryFilter] = useState("All")
+  const [priorityFilter, setPriorityFilter] = useState("All")
+  const [completedFilter, setCompletedFilter] = useState("All")
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
     fetch('http://localhost:5000/tasks', {
@@ -47,23 +51,40 @@ const Home = () => {
     return `${day.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}/${year.toString().slice(2)}`;
   };
 
+ 
+ const filteredTasks = tasks.filter((task) => {
+
+   
+  console.log(`task completed ${task.completed}`)
+  console.log(`completed filter ${completedFilter}`)
+
+
+  // Filtrar por categoria e prioridade
+  return (categoryFilter === "All" || task.category.name === categoryFilter) && 
+  (priorityFilter === "All" || task.priority.name === priorityFilter) && 
+  (completedFilter === "All" || task.completed.toString() === completedFilter) &&
+  (task.title.toLowerCase().startsWith(search.toLowerCase()));
+});
+
+
   
 
 
   return (
     <div>
-      <h1>Tasks</h1>
       <div>
-        {tasks.filter((task) => 
-        CategoryFilter == "All" ? true : categoryFilter === "Work" ? task.category : categoryFilter
-        )}
+        <Search search={search} setSearch={setSearch}></Search>
+      </div>
+      <h1 className={styles.home_title}>Tasks</h1>
+      <div>
+        <Filter setCategoryFilter={setCategoryFilter} categoryFilter={categoryFilter} 
+        priorityFilter={priorityFilter} setPriorityFilter={setPriorityFilter}
+        completedFilter={completedFilter} setCompletedFilter={setCompletedFilter}></Filter>
       </div>
       <div>
-        {tasks.length > 0 ? (
-
-                <>
-            <Link to="/newtask"><AiFillPlusCircle/></Link>
-            {tasks.map((task) => (
+        {filteredTasks.length > 0 ? (
+          <>
+            {filteredTasks.map((task) => (
               <TaskCard
                 key={task.id}
                 id={task.id}
@@ -77,9 +98,11 @@ const Home = () => {
             ))}
           </>
         ) : (
-          <div>
-            <h2>Clique aqui para criar sua primeira tarefa!</h2>
-            <Button to='/newtask' text="Criar tarefa" />
+          <div className={styles.container}>
+            <p>You have no tasks. Create one!</p>
+           <div className={styles.button}>
+            <Button text={"Create Task"} to={"/newtask"}></Button>
+           </div>
           </div>
         )}
       </div>
