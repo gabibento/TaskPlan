@@ -1,5 +1,5 @@
 {
-  "homepage": "https://gabibento.github.io/TaskProject",
+  "homepage": "https://gabibento.github.io/TaskProject/",
   "name": "task",
   "version": "0.1.0",
   "private": true,
@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build --basename /TaskProject",
+    "deploy": "gh-pages -d build",
     "backend": "json-server --watch db.json --port 5000",
     "build": "react-scripts build",
     "test": "react-scripts test",
