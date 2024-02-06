@@ -1,8 +1,8 @@
 import React from 'react'
-
+import styles from './Input.module.css'
 const Input = ({type, text, name, handleOnChange, value}) => {
   return (
-        <div>
+        <div className={styles.input_container}>
             <label htmlFor={name}>{text}:</label>
             <input 
             required
