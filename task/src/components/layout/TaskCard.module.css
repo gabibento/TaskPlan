@@ -1,0 +1,74 @@
+
+.card_container{
+    background-color: rgba(241, 237, 242, 0.692);
+    margin: 2em 0.5em 0 0.5em;
+    padding: 0 1em;
+    border: none;
+    border-radius: 10px;
+}
+.card_title{
+    margin-bottom: 0;
+    margin-left: 1em;
+    color: #5f5e5e;
+}
+.info{
+    margin-left: 1.8em;
+}
+.center_container{
+    display: flex;
+    justify-content: space-between;
+}
+.title_check{
+    display: flex;
+}
+.check, .flags{
+    display: flex;
+    align-items: flex-end;
+}
+.check{
+    cursor: pointer;
+}
+.yellow_flag, .red_flag, .orange_flag{
+    margin-top: 2em;
+}
+.subcontent{
+    display: flex;
+    justify-content: space-between;
+    height: 6vh;
+}
+.info, .buttons{
+    display: flex;
+}
+.update, .remove, .info{
+    display: flex;
+    align-items: center;
+}
+.remove, .work_category, .study_category, .personal_category{
+    margin-left: 1.5em;
+}
+.remove, .update{
+    color: #7868d8;
+    cursor: pointer;
+}
+.red_flag{
+    color: rgb(238, 107, 107)
+}
+.orange_flag{
+    color: rgb(248, 183, 61)
+}
+.yellow_flag{
+    color: rgb(255, 230, 88);
+}
+.work_category svg{
+    color: #482de2;
+}
+.study_category svg{
+    color: #9368d8;
+}
+.personal_category svg{
+    color: #af68d8;
+}
+  
+  
+
+  

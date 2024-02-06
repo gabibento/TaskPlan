@@ -1,0 +1,103 @@
+{
+  "tasks": [
+    {
+      "id": "8780",
+      "title": "stray kids",
+      "date": "2024-01-30T03:00:00.000Z",
+      "category": {
+        "id": "3",
+        "name": "Personal"
+      },
+      "priority": {
+        "id": "3",
+        "name": "Upcoming"
+      },
+      "completed": false
+    },
+    {
+      "id": "5cee",
+      "title": "lalalala",
+      "date": "2024-01-24T03:00:00.000Z",
+      "category": {
+        "id": "1",
+        "name": "Work"
+      },
+      "priority": {
+        "id": "1",
+        "name": "Urgent"
+      },
+      "completed": true
+    },
+    {
+      "id": "6d75",
+      "title": "skz",
+      "date": "2024-01-30T03:00:00.000Z",
+      "category": {
+        "id": "3",
+        "name": "Personal"
+      },
+      "priority": {
+        "id": "1",
+        "name": "Urgent"
+      },
+      "completed": false
+    },
+    {
+      "id": "5635",
+      "title": "ytfyytfty",
+      "date": "2024-01-10T03:00:00.000Z",
+      "category": {
+        "id": "2",
+        "name": "Study"
+      },
+      "priority": {
+        "id": "2",
+        "name": "Important"
+      },
+      "completed": true
+    },
+    {
+      "id": "a4f2",
+      "title": "limpar casa",
+      "date": "2024-01-31T03:00:00.000Z",
+      "category": {
+        "id": "3",
+        "name": "Personal"
+      },
+      "priority": {
+        "id": "1",
+        "name": "Urgent"
+      },
+      "completed": false
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Work"
+    },
+    {
+      "id": "2",
+      "name": "Study"
+    },
+    {
+      "id": "3",
+      "name": "Personal"
+    }
+  ],
+  "priorities": [
+    {
+      "id": "1",
+      "name": "Urgent"
+    },
+    {
+      "id": "2",
+      "name": "Important"
+    },
+    {
+      "id": "3",
+      "name": "Upcoming"
+    }
+  ],
+  "date": {}
+}
