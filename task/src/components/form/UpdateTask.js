@@ -2,6 +2,9 @@ import React, { useEffect, useReducer } from 'react';
 import { useParams } from 'react-router-dom';
 import TaskForm from './TaskForm';
 import { useNavigate } from 'react-router-dom';
+import styles from './NewTask.module.css'
+import { FaArrowLeft } from "react-icons/fa6";
+import { Link } from 'react-router-dom'
 
 const taskReducer = (state, action) => {
   switch (action.type) {
@@ -56,8 +59,13 @@ const UpdateTask = () => {
 
   return (
     <div>
+      <div className={styles.top_container}>
+        <Link to={"/"}><FaArrowLeft /></Link>
+        <h1>Update Task</h1>
+        </div>
+      
       {task && (
-        <TaskForm taskData={task} handleSubmit={update}></TaskForm>
+        <TaskForm btnText={"Update"} taskData={task} handleSubmit={update}></TaskForm>
       )}
     </div>
   );

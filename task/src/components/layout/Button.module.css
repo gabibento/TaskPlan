@@ -1,0 +1,11 @@
+.button_link a{
+    text-decoration: none;
+    color: #ececec;
+    background-color: #7868D8;
+    text-align: center;
+    padding: 0.5em;
+    border-radius: 10px;
+}
+.button_link a:hover{
+    background-color: rgba(121, 104, 216, 0.6);
+}

@@ -1,0 +1,16 @@
+.submit{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+.submit button{
+    color: #ececec;
+    font-size: 1em;
+    background-color: #7868D8;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    width: 35vw;
+    height: 5vh;
+    cursor: pointer;
+}

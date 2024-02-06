@@ -1,0 +1,24 @@
+.label_select select{
+    width: 43vw;
+    height: 2.7em;
+    border: 1px solid #b8b8b8;
+    border-radius: 5px; 
+    margin-top: 0.3em;
+    outline: none;
+    background-repeat: no-repeat;
+    background-position: center left 8px;
+    background-size: 15px;
+    padding-left: 28px;
+}
+.category{
+    background-image: url(../../assets/clipboard-list-solid.svg);
+    
+}
+.priority{
+    background-image: url(../../assets/flag-regular.svg);
+}
+.label_select{
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0.5em; 
+}

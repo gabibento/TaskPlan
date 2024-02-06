@@ -4,7 +4,8 @@ import styles from './TaskCard.module.css';
 import { MdOutlineRadioButtonUnchecked, MdRadioButtonChecked } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { FaTrash } from 'react-icons/fa';
-
+import { FiEdit } from "react-icons/fi";
+import { TbPointFilled } from "react-icons/tb";
 const TaskCard = ({ id, title, category, priority, date, task, handleRemove }) => {
   const [isCompleted, setIsCompleted] = useState(true);
 
@@ -47,41 +48,68 @@ const TaskCard = ({ id, title, category, priority, date, task, handleRemove }) =
   };
 
   return (
-    <div>
-      <div onClick={handleComplete}>
-        {!isCompleted ? <MdOutlineRadioButtonUnchecked /> : <MdRadioButtonChecked />}
-      </div>
-      <Link to={`/updatetask/${id}`}>
-        <div>
-          <div style={{ textDecoration: isCompleted ? 'line-through' : 'none' }}>
-            <h4>{title}</h4>
+    <div className={styles.card_container}>
+      <div className={styles.content_container}>
+
+           
+          <div className={styles.center_container}>
+            
+          <div className={styles.title_check}>
+              <div  className={styles.check} onClick={handleComplete}>
+                {!isCompleted ? <MdOutlineRadioButtonUnchecked /> : <MdRadioButtonChecked />}
+              </div>
+             
+              <div style={{ textDecoration: isCompleted ? 'line-through' : 'none' }}>
+                  <h4 className={styles.card_title}>{title}</h4>
+              </div>
+              </div>
+            
+            <div className={styles.flags}>
+                {priority === 'Urgent' && (
+                  <div className={styles.red_flag}>
+                    <FaFlag></FaFlag>
+                  </div>
+                )}
+                {priority === 'Important' && (
+                  <div className={styles.orange_flag}>
+                    <FaFlag></FaFlag>
+                  </div>
+                )}
+                {priority === 'Upcoming' && (
+                  <div className={styles.yellow_flag}>
+                    <FaFlag></FaFlag>
+                  </div>
+                )}
+              </div>
+              
           </div>
-          <p>{date}</p>
+            <div className={styles.subcontent}>
+              <div className={styles.info}>
+                <p>{date}</p>
+                {category === 'Work' && (
+                  <p className={(styles.p_category, styles.work_category)}><TbPointFilled /> {category}</p>
+                )}
+                {category === 'Study' && (
+                  <p className={(styles.p_category, styles.study_category)}><TbPointFilled /> {category}</p>
+                )}
+                {category === 'Personal' && (
+                  <p className={(styles.p_category, styles.personal_category)}><TbPointFilled /> {category}</p>
+                )}
+                
+              </div>
+              <div className={styles.buttons}>
+              <Link className={styles.update} to={`/updatetask/${id}`}>
+              <FiEdit />
+              </Link>
+            
+              <div className={styles.remove} onClick={remove}>
+                <FaTrash></FaTrash>
+              
+              </div>
+              </div>
+            
         </div>
-        <div>
-          <p>{category}</p>
         </div>
-        <div>
-          {priority === 'Urgent' && (
-            <div className={styles.red_flag}>
-              <FaFlag></FaFlag>
-            </div>
-          )}
-          {priority === 'Important' && (
-            <div className={styles.orange_flag}>
-              <FaFlag></FaFlag>
-            </div>
-          )}
-          {priority === 'Upcoming' && (
-            <div className={styles.yellow_flag}>
-              <FaFlag></FaFlag>
-            </div>
-          )}
-        </div>
-      </Link>
-      <div onClick={remove}>
-        <FaTrash></FaTrash>
-      </div>
     </div>
   );
 };
