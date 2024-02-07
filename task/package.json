@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -o '/TaskProject'",
+    "deploy": "gh-pages -d build -o 'TaskProject' -b main",
     "build": "react-scripts build",
     "backend": "json-server --watch db.json --port 5000",
     "test": "react-scripts test",
