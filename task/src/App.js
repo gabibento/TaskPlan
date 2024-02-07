@@ -9,8 +9,15 @@ function App() {
   return (
     <div>
       <h1>teste</h1>
-      <Home></Home>
-     
+      
+      <Router>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/newtask" element={<NewTask/>}/>
+        <Route path='/updatetask/:id' element={<UpdateTask/>}/>
+    
+      </Routes>
+    </Router>
     </div>
   );
 }
