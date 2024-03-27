@@ -9,7 +9,6 @@ import UpdateTask from './components/form/UpdateTask';
 function App() {
   return (
     <div>
-      <h1>teste</h1>
       
       <Router>
       <Routes>
