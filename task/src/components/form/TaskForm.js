@@ -3,62 +3,39 @@ import Input from './Input';
 import SubmitButton from './SubmitButton';
 import Select from './Select';
 import { Calendar } from 'primereact/calendar';
-import styles from './TaskForm.module.css'
+import styles from './TaskForm.module.css';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
 
 const TaskForm = ({ taskData, handleSubmit, btnText }) => {
   const [task, setTask] = useState(taskData || {});
   const [categories, setCategories] = useState([]);
   const [priorities, setPriorities] = useState([]);
-  const [formData, setFormData] = useState({ date: null });
-
-  
-
 
   useEffect(() => {
-    fetch('http://localhost:5000/categories', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        setCategories(data);
-      })
-      .catch((err) => console.log(err));
+    const fetchCategories = async () => {
+      const db = firebase.firestore();
+      const categoriesCollection = db.collection('categories');
+      const snapshot = await categoriesCollection.get();
+      const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setCategories(data);
+    };
+
+    fetchCategories();
   }, []);
 
   useEffect(() => {
-    fetch('http://localhost:5000/priorities', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        setPriorities(data);
-      })
-      .catch((err) => console.log(err));
+    const fetchPriorities = async () => {
+      const db = firebase.firestore();
+      const prioritiesCollection = db.collection('priorities');
+      const snapshot = await prioritiesCollection.get();
+      const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setPriorities(data);
+    };
+
+    fetchPriorities();
   }, []);
 
-  useEffect(() => {
-    fetch('http://localhost:5000/date', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        setFormData(data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
-
-  
-
-  
   const submit = (e) => {
     e.preventDefault();
     handleSubmit(task);
@@ -90,15 +67,9 @@ const TaskForm = ({ taskData, handleSubmit, btnText }) => {
   }
 
   const handleDateChange = (e) => {
-    // Convert the date to a string
     const dateString = e.value ? e.value.toISOString() : null;
-
-    // Update the state with the new date selected
     setTask({ ...task, date: dateString });
   };
-
-  
-
 
   return (
     <div>
@@ -111,33 +82,32 @@ const TaskForm = ({ taskData, handleSubmit, btnText }) => {
           value={task.title ? task.title : ''}
         />
         <div className={styles.date_container}>
-         <label htmlFor="date">Date</label>
+          <label htmlFor="date">Date</label>
           <Calendar
-          inputId="date"
-          value={task.date ? new Date(task.date) : null}
-          onChange={handleDateChange}
-          dateFormat="dd/mm/yy"
-          inputClassName={styles.input_calendar}
-          className={styles.react_calendar}
-          
-        />
+            inputId="date"
+            value={task.date ? new Date(task.date) : null}
+            onChange={handleDateChange}
+            dateFormat="dd/mm/yy"
+            inputClassName={styles.input_calendar}
+            className={styles.react_calendar}
+          />
         </div>
         <div className={styles.select_container}>
-        <Select
-          labelText={"Category"}
-          name={"category_id"}
-          options={categories}
-          handleOnChange={handleCategory}
-          value={task.category ? task.category.id : ''}
-        />
-        <Select
-          labelText={"Priority"}
-          name={"priority_id"}
-          options={priorities}
-          handleOnChange={handlePriority}
-          value={task.priority ? task.priority.id : ''}
-        />  
-        </div>     
+          <Select
+            labelText={"Category"}
+            name={"category_id"}
+            options={categories}
+            handleOnChange={handleCategory}
+            value={task.category ? task.category.id : ''}
+          />
+          <Select
+            labelText={"Priority"}
+            name={"priority_id"}
+            options={priorities}
+            handleOnChange={handlePriority}
+            value={task.priority ? task.priority.id : ''}
+          />
+        </div>
         <SubmitButton text={btnText}></SubmitButton>
       </form>
     </div>
