@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Button from '../layout/Button';
 import TaskCard from '../layout/TaskCard';
-import Filter from '../layout/Filter'
-import Search from '../layout/Search'
-import styles from './Home.module.css'
+import Filter from '../layout/Filter';
+import Search from '../layout/Search';
+import styles from './Home.module.css';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
 
 const Home = () => {
   
@@ -14,32 +16,24 @@ const Home = () => {
   const [search, setSearch] = useState("")
 
   useEffect(() => {
-    fetch('http://localhost:5000/tasks', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setTasks(data);
-      })
-      .catch((err) => console.log(err));
+    const fetchData = async () => {
+      const db = firebase.firestore();
+      const tasksCollection = db.collection('tasks');
+      const snapshot = await tasksCollection.get();
+      const tasksData = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setTasks(tasksData);
+    };
+
+    fetchData();
   }, []);
 
-  const removeTask = (id) => {
-    fetch(`http://localhost:5000/tasks/${id}`, {
-                method: 'DELETE',
-                headers:{
-                    'Content-Type': 'application/json'
-                },
-            }).then((resp) => resp.json())
-            .then(() => {
-                setTasks(tasks.filter((task) => task.id !== id))
-            })
-            .catch(err => console.log(err))
-  }
+
+  const removeTask = async (id) => {
+    const db = firebase.firestore();
+    const tasksCollection = db.collection('tasks');
+    await tasksCollection.doc(id).delete();
+    setTasks(tasks.filter(task => task.id !== id));
+  };
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);

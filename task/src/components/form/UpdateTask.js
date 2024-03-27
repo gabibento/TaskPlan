@@ -2,9 +2,11 @@ import React, { useEffect, useReducer } from 'react';
 import { useParams } from 'react-router-dom';
 import TaskForm from './TaskForm';
 import { useNavigate } from 'react-router-dom';
-import styles from './NewTask.module.css'
+import styles from './NewTask.module.css';
 import { FaArrowLeft } from "react-icons/fa6";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
 
 const taskReducer = (state, action) => {
   switch (action.type) {
@@ -18,43 +20,32 @@ const taskReducer = (state, action) => {
 const UpdateTask = () => {
   const [task, dispatchTask] = useReducer(taskReducer, null);
   const { id } = useParams();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/tasks/${id}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(resp => resp.json())
-      .then(data => {
-        if (data) {
-          dispatchTask({ type: 'SET_TASK', payload: data });
-        }
-       
-      })
-      .catch((err) => console.log(err));
-  }, [id]);
-
-  const update = (task) => {
-    const requestOptions = {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(task),
+    const fetchTask = async () => {
+      const db = firebase.firestore();
+      const taskDoc = await db.collection('tasks').doc(id).get();
+      if (taskDoc.exists) {
+        dispatchTask({ type: 'SET_TASK', payload: { id: taskDoc.id, ...taskDoc.data() } });
+      } else {
+        console.log('Task not found');
+      }
     };
 
+    fetchTask();
+  }, [id]);
 
-
-    fetch(`http://localhost:5000/tasks/${id}`, requestOptions)
-      .then((resp) => resp.json())
-      .then((data) => {
-        dispatchTask({ type: 'SET_TASK', payload: data });
-        navigate('/', { state: { message: 'Projeto atualizado com sucesso!' } });
+  const update = (taskData) => {
+    const db = firebase.firestore();
+    db.collection('tasks').doc(id).set(taskData)
+      .then(() => {
+        console.log('Task updated successfully!');
+        navigate('/', { state: { message: 'Task updated successfully!' } });
       })
-      .catch((err) => console.log('Update Error:', err));
+      .catch((error) => {
+        console.error('Error updating task:', error);
+      });
   };
 
   return (
@@ -62,8 +53,7 @@ const UpdateTask = () => {
       <div className={styles.top_container}>
         <Link to={"/"}><FaArrowLeft /></Link>
         <h1>Update Task</h1>
-        </div>
-      
+      </div>
       {task && (
         <TaskForm btnText={"Update"} taskData={task} handleSubmit={update}></TaskForm>
       )}
