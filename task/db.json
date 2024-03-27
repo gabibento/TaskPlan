@@ -15,20 +15,6 @@
       "completed": false
     },
     {
-      "id": "5cee",
-      "title": "lalalala",
-      "date": "2024-01-24T03:00:00.000Z",
-      "category": {
-        "id": "1",
-        "name": "Work"
-      },
-      "priority": {
-        "id": "1",
-        "name": "Urgent"
-      },
-      "completed": true
-    },
-    {
       "id": "6d75",
       "title": "skz",
       "date": "2024-01-30T03:00:00.000Z",
@@ -54,7 +40,7 @@
         "id": "2",
         "name": "Important"
       },
-      "completed": true
+      "completed": false
     },
     {
       "id": "a4f2",
