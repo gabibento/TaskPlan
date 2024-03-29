@@ -33,7 +33,7 @@ const TaskCard = ({ id, title, category, priority, date, task, handleRemove }) =
     taskRef.update({
       completed: !isCompleted
     }).then(() => {
-      console.log('Task marked as completed!');
+
     }).catch((error) => {
       console.error('Error updating task:', error);
     });
@@ -77,9 +77,15 @@ const TaskCard = ({ id, title, category, priority, date, task, handleRemove }) =
         <div className={styles.subcontent}>
           <div className={styles.info}>
             <p>{date}</p>
-            <p className={styles.p_category}>
-              <TbPointFilled /> {category}
-            </p>
+             {category === 'Work' && (
+                  <p className={(styles.p_category, styles.work_category)}><TbPointFilled /> {category}</p>
+                )}
+                {category === 'Study' && (
+                  <p className={(styles.p_category, styles.study_category)}><TbPointFilled /> {category}</p>
+                )}
+                {category === 'Personal' && (
+                  <p className={(styles.p_category, styles.personal_category)}><TbPointFilled /> {category}</p>
+                )}
           </div>
           <div className={styles.buttons}>
             <Link className={styles.update} to={`/updatetask/${id}`}>
