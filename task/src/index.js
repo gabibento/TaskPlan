@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/database';
 import App from './App';
@@ -14,12 +14,12 @@ const firebaseConfig = {
   appId: "1:498647412613:web:b74de9e2007cc62f629eec"
 };
 
-// Inicialize o Firebase
 firebase.initializeApp(firebaseConfig);
 
-ReactDOM.render(
+createRoot(
+  document.getElementById('root')
+  ).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );

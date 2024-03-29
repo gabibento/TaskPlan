@@ -18,6 +18,7 @@ const taskReducer = (state, action) => {
 };
 
 const UpdateTask = () => {
+  
   const [task, dispatchTask] = useReducer(taskReducer, null);
   const { id } = useParams();
   const navigate = useNavigate();
