@@ -15,7 +15,6 @@ const NewTask = () => {
         const db = firebase.firestore();
         db.collection('tasks').add({ ...task, completed: !completed })
             .then(() => {
-                console.log('Task created successfully!');
                 navigate('/', { state: { message: 'Task created successfully!' } });
             })
             .catch((error) => {

@@ -16,7 +16,9 @@ const Home = () => {
   const [search, setSearch] = useState("")
 
   useEffect(() => {
+
     const fetchData = async () => {
+
       const db = firebase.firestore();
       const tasksCollection = db.collection('tasks');
       const snapshot = await tasksCollection.get();
@@ -47,11 +49,6 @@ const Home = () => {
 
  
  const filteredTasks = tasks.filter((task) => {
-
-   
-  console.log(`task completed ${task.completed}`)
-  console.log(`completed filter ${completedFilter}`)
-
 
   // Filtrar por categoria e prioridade
   return (categoryFilter === "All" || task.category.name === categoryFilter) && 

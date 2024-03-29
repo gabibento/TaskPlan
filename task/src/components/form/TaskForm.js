@@ -13,22 +13,32 @@ const TaskForm = ({ taskData, handleSubmit, btnText }) => {
   const [priorities, setPriorities] = useState([]);
 
   useEffect(() => {
+
     const fetchCategories = async () => {
-      const db = firebase.firestore();
-      const categoriesCollection = db.collection('categories');
-      const snapshot = await categoriesCollection.get();
-      const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setCategories(data);
+
+      const db = firebase.firestore(); //instância do firestore (banco de dados NoSQL) fornecido pelo firebase
+
+      const categoriesCollection = db.collection('categories'); //acessa a coleção 'categories'
+
+      const snapshot = await categoriesCollection.get(); //consulta assíncrona à coleção
+
+      const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })); //acessa os documentos da consulta e os mapeia
+      setCategories(data); //seta as categorias com os dados obtidos
     };
 
     fetchCategories();
   }, []);
 
   useEffect(() => {
+
     const fetchPriorities = async () => {
+
       const db = firebase.firestore();
+
       const prioritiesCollection = db.collection('priorities');
+
       const snapshot = await prioritiesCollection.get();
+
       const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       setPriorities(data);
     };
@@ -39,7 +49,6 @@ const TaskForm = ({ taskData, handleSubmit, btnText }) => {
   const submit = (e) => {
     e.preventDefault();
     handleSubmit(task);
-    console.log(task);
   };
 
   function handleChange(e) {
