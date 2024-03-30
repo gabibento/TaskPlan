@@ -1,4 +1,8 @@
-# TaskPlan - Gerenciador de Tarefas
+<h1>
+  <img src="task/public/favicon.ico" alt="Ícone do Projeto" width="32" height="32">
+  &nbsp;
+  TaskPlan - Gerenciador de Tarefas
+</h1>
 
 O TaskPlan é um projeto React JS que visa oferecer uma solução eficiente e intuitiva para o gerenciamento de tarefas. Com ele é possível criar, editar, excluir, pesquisar e filtrar tarefas com facilidade, tornando o processo de organização mais simples e eficaz.
 
@@ -26,7 +30,8 @@ O principal objetivo do TaskPlan é oferecer uma ferramenta prática e eficaz pa
 - **Filtragem de Tarefas:** Também é possível filtrar suas tarefas pela sua categoria, prioridade e progresso, para facilitar a visualização e o acompanhamento.
 
 - **Conclusão de Tarefas:** Há, além disso, a funcionalidade de marcar as tarefas como concluídas, podendo visualizar seu progresso. Da mesma forma, é possível desmarcar tarefas concluídas, permitindo ajustes e acompanhamento contínuo.
-
+  
+- **Design Responsivo:** O TaskPlan possui um design responsivo, adaptando-se a diferentes tamanhos de telas
 
 ## Organização de tarefas
 
@@ -46,7 +51,7 @@ Cada tarefa no TaskPlan possui uma data associada. Assim podendo agendar suas ta
 
 ## Como Utilizar
 
-Você pode acessar o TaskPlan através do seguinte link: [TaskPlan](https://gabibento.github.io/TaskProject).
+Você pode acessar o TaskPlan através do seguinte link: [TaskPlan](https://gabibento.github.io/TaskPlan).
 
 ## Integração Simulada
 
