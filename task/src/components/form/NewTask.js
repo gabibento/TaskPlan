@@ -28,7 +28,9 @@ const NewTask = () => {
                 <Link to={"/"}><FaArrowLeft /></Link>
                 <h1>Create Task</h1>
             </div>
+            <div className={styles.taskForm}>
             <TaskForm handleSubmit={createTask} btnText='Create'></TaskForm>
+            </div>
         </div>
     );
 };
