@@ -1,7 +1,7 @@
 .search_container{
     display: flex;
     justify-content: space-between;
-    width: 80vw;
+    width: 85vw;
     margin: 2.5em auto;
 }
 .search_container svg{
