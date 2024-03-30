@@ -14,13 +14,12 @@
 .search_input input{
     background-image: url(../../assets//icons8-search.svg);
     background-repeat: no-repeat;
-    background-position: center left 5px;
+    background-position: center left 0.5em;
     background-color: rgba(236, 234, 236, 0.418);
     width: 60vw;
     border: none;
     border-radius: 10px;
-    padding: 5px;
-    padding-left: 22px;
+    padding: 5px 2em;
     outline: none;
 }
 .search_input input:hover{
@@ -32,7 +31,5 @@
     .search_container svg{
         font-size: 2.5em;
     }
-    .search_input input{
-        padding: 10px;
-    }
+
 }
