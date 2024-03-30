@@ -1,16 +1,27 @@
 .submit{
     display: flex;
     justify-content: center;
-    margin-top: 1em;
+    margin: 1em 0;
 }
 .submit button{
-    color: #ececec;
+    color: #ffffff;
     font-size: 1em;
     background-color: #7868D8;
     text-align: center;
     border: none;
     border-radius: 10px;
     width: 35vw;
-    height: 5vh;
+    height: 7vh;
     cursor: pointer;
+}
+@media screen and (min-width: 51.875em) {
+    .submit button{
+        height: 8vh;
+        width: 28vw;
+    }
+}
+@media screen and (min-width: 64.375em) {
+    .submit{
+        margin: 2em 0;
+    }
 }

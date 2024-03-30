@@ -88,12 +88,15 @@ const TaskCard = ({ id, title, category, priority, date, task, handleRemove }) =
                 )}
           </div>
           <div className={styles.buttons}>
+           
             <Link className={styles.update} to={`/updatetask/${id}`}>
               <FiEdit />
             </Link>
+  
             <div className={styles.remove} onClick={remove}>
               <FaTrash></FaTrash>
             </div>
+            
           </div>
         </div>
       </div>

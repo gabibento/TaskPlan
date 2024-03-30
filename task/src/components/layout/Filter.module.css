@@ -1,6 +1,7 @@
 .select_container{
     display: flex;
     justify-content: space-around;
+    margin: 2.5em 0;
 }
 .select select{
     border: none;
@@ -8,10 +9,30 @@
     background-color:  rgba(121, 104, 216, 0.863);
     color: #ffffff;
     text-align: center;
-    padding: 0.3em;
+    padding: 0.3em 0;
+    width: 25vw;
     outline: none;
     cursor: pointer;
 }
 .select select:hover{
     background-color: rgba(121, 104, 216, 0.5);
+}
+@media screen and (min-width: 33.125em){
+    .select select{
+        width: 23.5vw;
+    }
+}
+@media screen and (min-width: 51.875em){
+    .select_container{
+        justify-content: center;
+        margin: 3.5em 0;
+     }
+     .select select{
+         width: 15vw;
+         display: inline;
+         margin: 0 2em;
+     }
+}
+@media screen and (min-width: 64.375em){
+   
 }

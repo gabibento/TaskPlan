@@ -1,7 +1,8 @@
 .search_container{
     display: flex;
     justify-content: space-between;
-    margin: 1em 0.5em 0 0.5em;
+    width: 80vw;
+    margin: 2.5em auto;
 }
 .search_container svg{
     font-size: 2em;
@@ -14,7 +15,7 @@
     background-image: url(../../assets//icons8-search.svg);
     background-repeat: no-repeat;
     background-position: center left 5px;
-    background-color: rgba(236, 234, 236, 0.479);
+    background-color: rgba(236, 234, 236, 0.418);
     width: 60vw;
     border: none;
     border-radius: 10px;
@@ -24,4 +25,14 @@
 }
 .search_input input:hover{
     background-color: #dddbdb;
+}
+
+@media screen and (min-width: 39.375em){
+
+    .search_container svg{
+        font-size: 2.5em;
+    }
+    .search_input input{
+        padding: 10px;
+    }
 }
