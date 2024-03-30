@@ -1,12 +1,16 @@
-.top_container{
-    display: flex;
-    flex-direction: column;
-}
+
 .top_container svg{
     font-size: 1.5em;
     color: #7868D8;
     margin: 1.5em 0 0 1.5em;
 }
+.top_container h1{
+    margin-top: 10vh;
+}
 .newTask_container{
-    margin: auto;
+    display: flex;
+    height: 96vh;
+    flex-direction: column;
+    justify-content: center;
+
 }

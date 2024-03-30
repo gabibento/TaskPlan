@@ -34,7 +34,7 @@
 .subcontent{
     display: flex;
     justify-content: space-between;
-    height: 2em;
+    height: 2.5em;
 }
 .info, .buttons{
     display: flex;
