@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TaskProject/static/css/main.b9ea9e13.css",
-    "main.js": "/TaskProject/static/js/main.6cd89496.js",
+    "main.css": "/TaskProject/static/css/main.6d2d2ec1.css",
+    "main.js": "/TaskProject/static/js/main.64bd4e67.js",
     "static/media/logo.svg": "/TaskProject/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "static/media/icons8-search.svg": "/TaskProject/static/media/icons8-search.2cda8ff9b1575eb5a475.svg",
     "index.html": "/TaskProject/index.html",
@@ -9,11 +9,11 @@
     "static/media/clipboard-list-solid.svg": "/TaskProject/static/media/clipboard-list-solid.a905184d1423a089c918.svg",
     "static/media/calendar-regular (1).svg": "/TaskProject/static/media/calendar-regular (1).1792e24b93ce8f9a9819.svg",
     "static/media/pen-solid.svg": "/TaskProject/static/media/pen-solid.a3aa6e83bfc0f12b98cb.svg",
-    "main.b9ea9e13.css.map": "/TaskProject/static/css/main.b9ea9e13.css.map",
-    "main.6cd89496.js.map": "/TaskProject/static/js/main.6cd89496.js.map"
+    "main.6d2d2ec1.css.map": "/TaskProject/static/css/main.6d2d2ec1.css.map",
+    "main.64bd4e67.js.map": "/TaskProject/static/js/main.64bd4e67.js.map"
   },
   "entrypoints": [
-    "static/css/main.b9ea9e13.css",
-    "static/js/main.6cd89496.js"
+    "static/css/main.6d2d2ec1.css",
+    "static/js/main.64bd4e67.js"
   ]
 }
