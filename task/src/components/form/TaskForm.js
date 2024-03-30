@@ -81,7 +81,7 @@ const TaskForm = ({ taskData, handleSubmit, btnText }) => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       <form onSubmit={submit}>
         <Input
           type={"text"}

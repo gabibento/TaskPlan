@@ -1,9 +1,9 @@
 .top_container{
-    margin-top: 1.3em;
     display: flex;
     flex-direction: column;
 }
 .top_container svg{
     font-size: 1.5em;
     color: #7868D8;
+    margin: 1.5em 0 0 1.5em;
 }
