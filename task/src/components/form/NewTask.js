@@ -23,13 +23,16 @@ const NewTask = () => {
     };
 
     return (
-        <div className={styles.newTask_container}>
+        <div>
             <div className={styles.top_container}>
-                <Link to={"/"}><FaArrowLeft /></Link>
-                <h1>Create Task</h1>
+             <Link to={"/"}><FaArrowLeft /></Link>
             </div>
-            <div className={styles.taskForm}>
-            <TaskForm handleSubmit={createTask} btnText='Create'></TaskForm>
+    
+            <div className={styles.newTask_container}>
+                <h1>Create Task</h1>
+                <div className={styles.taskForm}>
+                <TaskForm handleSubmit={createTask} btnText='Create'></TaskForm>
+                </div>
             </div>
         </div>
     );
