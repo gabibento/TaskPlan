@@ -1,7 +1,7 @@
 .input_container{
     display: flex;
     flex-direction: column;
-    margin-bottom: 1em;
+    margin-bottom: 3vh;
 }
 .input_container input{
    background-image: url(../../assets/pen-solid.svg);
