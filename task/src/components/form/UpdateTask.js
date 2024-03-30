@@ -52,12 +52,15 @@ const UpdateTask = () => {
   return (
     <div>
       <div className={styles.top_container}>
-        <Link to={"/"}><FaArrowLeft /></Link>
-        <h1>Update Task</h1>
+          <Link to={"/"}><FaArrowLeft /></Link>
       </div>
-      {task && (
-        <TaskForm btnText={"Update"} taskData={task} handleSubmit={update}></TaskForm>
-      )}
+      
+      <div className={styles.newTask_container}>
+        <h1>Update Task</h1>
+        {task && (
+          <TaskForm btnText={"Update"} taskData={task} handleSubmit={update}></TaskForm>
+        )}
+      </div>
     </div>
   );
 };
