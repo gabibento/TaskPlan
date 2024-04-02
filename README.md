@@ -10,6 +10,10 @@ O TaskPlan é um projeto React JS que visa oferecer uma solução eficiente e in
 
 O principal objetivo do TaskPlan é oferecer uma ferramenta prática e eficaz para o gerenciamento de tarefas diárias, projetos ou qualquer outra atividade que exija uma abordagem organizada. Ao fornecer recursos como criação, edição, exclusão, pesquisa e filtragem de tarefas, o TaskPlan visa aumentar a produtividade e facilitar o acompanhamento do progresso das atividades.
 
+<img src="task/src/assets/printTaskPlan.png" width="50%">
+
+Acesse-o através deste link: [TaskPlan](https://gabibento.github.io/TaskPlan).
+
 ## Tecnologias Utilizadas
 
 - React JS
@@ -48,10 +52,6 @@ As tarefas podem estar completas ou incompletas. Essa divisão permite ao usuár
 ### Data
 
 Cada tarefa no TaskPlan possui uma data associada. Assim podendo agendar suas tarefas de acordo com prazos específicos, facilitando o planejamento e a organização das atividades, oferecendo um gerenciamento melhor de tempo e prioridades.
-
-## Como Utilizar
-
-Você pode acessar o TaskPlan através do seguinte link: [TaskPlan](https://gabibento.github.io/TaskPlan).
 
 ## Integração Simulada
 
