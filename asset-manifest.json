@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TaskPlan/static/css/main.87db6e1c.css",
-    "main.js": "/TaskPlan/static/js/main.df6d9118.js",
+    "main.css": "/TaskPlan/static/css/main.1881584a.css",
+    "main.js": "/TaskPlan/static/js/main.0cff11b1.js",
     "static/media/logo.svg": "/TaskPlan/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "static/media/icons8-search.svg": "/TaskPlan/static/media/icons8-search.2cda8ff9b1575eb5a475.svg",
     "index.html": "/TaskPlan/index.html",
@@ -9,11 +9,11 @@
     "static/media/clipboard-list-solid.svg": "/TaskPlan/static/media/clipboard-list-solid.a905184d1423a089c918.svg",
     "static/media/calendar-regular (1).svg": "/TaskPlan/static/media/calendar-regular (1).1792e24b93ce8f9a9819.svg",
     "static/media/pen-solid.svg": "/TaskPlan/static/media/pen-solid.a3aa6e83bfc0f12b98cb.svg",
-    "main.87db6e1c.css.map": "/TaskPlan/static/css/main.87db6e1c.css.map",
-    "main.df6d9118.js.map": "/TaskPlan/static/js/main.df6d9118.js.map"
+    "main.1881584a.css.map": "/TaskPlan/static/css/main.1881584a.css.map",
+    "main.0cff11b1.js.map": "/TaskPlan/static/js/main.0cff11b1.js.map"
   },
   "entrypoints": [
-    "static/css/main.87db6e1c.css",
-    "static/js/main.df6d9118.js"
+    "static/css/main.1881584a.css",
+    "static/js/main.0cff11b1.js"
   ]
 }
