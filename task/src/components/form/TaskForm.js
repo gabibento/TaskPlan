@@ -93,6 +93,7 @@ const TaskForm = ({ taskData, handleSubmit, btnText }) => {
         <div className={styles.date_container}>
           <label htmlFor="date">Date</label>
           <Calendar
+            required
             inputId="date"
             value={task.date ? new Date(task.date) : null}
             onChange={handleDateChange}

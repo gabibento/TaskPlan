@@ -25,3 +25,13 @@ label{
         padding-left: 40px;
     }
 }
+@media screen and (min-width: 64.375em) {
+    .input_container input{
+        height: 3.5em;
+        margin: 0.5em 1em 0 1em;
+    }
+    label{
+        margin: 0.5em 1em 0 1em;
+    }
+}
+

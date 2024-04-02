@@ -34,3 +34,22 @@ table, button{
         padding-left: 40px;
     }
 }
+@media screen and (min-width: 64.375em) {
+    .input_calendar{
+        height: 3.75em;
+        margin: 0.5em 1em 0 1em;
+    }
+    label{
+        margin: 0.5em 1em 0 1em;
+    }
+    .select_container{
+        margin: 0 1em 0 1em;
+    }
+}
+@media screen and (min-width: 64.375em) {
+    .label_select select{
+        height: 3.75em;
+    }
+
+
+}
